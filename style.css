@@ -1,5 +1,4 @@
 /* Nomes: Carlos Antônio, Gabriel Souza e Jéssica Esteffany */
-/* anotaçao minha: dexar o site bonitinho usando umas cor viva pq a prof gosta de front end bem feito */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f7f9fc;
@@ -8,7 +7,7 @@ body {
 }
 
 nav {
-    background-color: #5e60ce; /* uma cor q axamos legal pro menu */
+    background-color: #5e60ce; 
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -25,7 +24,7 @@ nav a:hover { color: #56cfe1; }
     background: white;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* sombrinha basica pra fikar profissa */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
 }
 
 h1 { color: #333; margin-top: 0; }

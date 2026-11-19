@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Despesas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Carlos Antônio, Gabriel Souza e Jéssica Esteffany -->
+    
+    <nav>
+        <h2>Minhas Despesas $</h2>
+        <a href="index.html">Início</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="categoria-form.html">Nova Categoria</a>
+        <a href="despesas.html">Despesas</a>
+        <a href="despesa-form.html">Nova Despesa</a>
+    </nav>
+
+    <div class="container">
+        <h1>Despesas (<span id="count-despesas">0</span>) <a href="despesa-form.html" class="btn">+ Nova</a></h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Pagamento</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-despesas">
+                <!-- aq entra as dispesas do js -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"><strong>Total do Mês (bônus):</strong></td>
+                    <td colspan="4"><strong id="rodape-total">R$ 0,00</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        window.onload = listarDespesas;
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Despesa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav>
+        <h2>Minhas Despesas $</h2>
+        <a href="index.html">Início</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="categoria-form.html">Nova Categoria</a>
+        <a href="despesas.html">Despesas</a>
+        <a href="despesa-form.html">Nova Despesa</a>
+    </nav>
+
+    <div class="container" id="area-form">
+        <!-- Se der erro de categoria vazia, o js troca isso daki -->
+        <h1>Nova Despesa</h1>
+        
+        <form onsubmit="salvarDespesa(event)">
+            <label>Descrição</label>
+            <input type="text" id="desc-despesa" name="descricao" placeholder="Ex: Almoço RU" required>
+            
+            <label>Valor (R$)</label>
+            <input type="number" step="0.01" id="valor" name="valor" placeholder="Ex: 4.58" required>
+            
+            <label>Data</label>
+            <input type="date" id="data" name="data" required>
+            
+            <label>Categoria</label>
+            <select id="categoriaId" name="categoriaId" required>
+                <option value="">Selecione...</option>
+                <!-- o js carrega as opçao -->
+            </select>
+            
+            <label>Forma de pagamento</label>
+            <div class="radio-group">
+                <input type="radio" id="pix" name="formaPagamento" value="Pix" required> <label for="pix">Pix</label>
+                <input type="radio" id="cartao" name="formaPagamento" value="Cartão"> <label for="cartao">Cartão</label>
+                <input type="radio" id="dinheiro" name="formaPagamento" value="Dinheiro"> <label for="dinheiro">Dinheiro</label>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                <button type="submit" class="btn-save">Salvar despesa</button>
+                <a href="despesas.html" class="btn-cancel">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        window.onload = prepararFormDespesa;
+    </script>
+</body>
+</html>

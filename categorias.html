@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Categorias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav>
+        <h2>Minhas Despesas $</h2>
+        <a href="index.html">Início</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="categoria-form.html">Nova Categoria</a>
+        <a href="despesas.html">Despesas</a>
+        <a href="despesa-form.html">Nova Despesa</a>
+    </nav>
+
+    <div class="container">
+        <!-- Gabriel Souza digitou essa parte rs -->
+        <h1>Categorias (<span id="count-cat">0</span>) <a href="categoria-form.html" class="btn">+ Nova</a></h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Limite</th>
+                    <th>Qtd. despesas</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-categorias">
+                <!-- o JS vai jogar os dado aqi -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        window.onload = listarCategorias;
+    </script>
+</body>
+</html>

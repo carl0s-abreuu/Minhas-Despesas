@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Minhas Despesas - Início</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Nomes do grupo: Carlos Antônio, Gabriel Souza e Jéssica Esteffany -->
+    
+    <nav>
+        <h2>Minhas Despesas $</h2>
+        <a href="index.html">Início</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="categoria-form.html">Nova Categoria</a>
+        <a href="despesas.html">Despesas</a>
+        <a href="despesa-form.html">Nova Despesa</a>
+    </nav>
+
+    <div class="container">
+        <h1>Para onde foi meu dinheiro?</h1>
+        <p>Cadastre categorias e registre cada gasto do mês.</p>
+        
+        <div class="dashboard">
+            <div class="card bg-cat">
+                <h3 id="qtd-cat">0</h3>
+                <p>categorias</p>
+                <a href="categoria-form.html">1º Criar categoria</a>
+            </div>
+            <div class="card bg-desp">
+                <h3 id="qtd-desp">0</h3>
+                <p>despesas</p>
+                <a href="despesa-form.html">2º Registrar despesa</a>
+            </div>
+            <div class="card bg-total">
+                <h3 id="total-mes">R$ 0,00</h3>
+                <p>total do mês (bônus)</p>
+            </div>
+        </div>
+    </div>
+    <!-- anotaçao minha: n esquecer de colocar o script no final de todas paginas -->
+    <script src="script.js"></script>
+    <script>
+        // chama a funçao so pra essa pagina
+        window.onload = carregarDashboard;
+    </script>
+</body>
+</html>

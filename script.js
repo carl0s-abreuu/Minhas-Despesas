@@ -1,7 +1,5 @@
 // Feito por: Carlos Antônio, Gabriel Souza e Jéssica Esteffany
 // a prova era com Spring Boot mas a gnt fez tudo front end html/css/js como pedido na tarefa (e sem db)
-// anotaçao minha: usando localStorage pra salvar as coisa pq ai simula q tem um banco de dados pro prof dar nota max
-// nois rala mas nois passa!!
 
 // funçao pra pegar as categoria do storage
 function getCategorias() {
@@ -15,7 +13,7 @@ function salvarCategoria(e) {
     
     let categorias = getCategorias();
     let nova = {
-        id: Date.now(), // gera um id loko aleatorio tipo proxId++
+        id: Date.now(), // gera um id aleatorio
         nome: document.getElementById('nome').value,
         descricao: document.getElementById('descricao').value,
         limite: document.getElementById('limite').value || ""
@@ -51,7 +49,7 @@ function listarCategorias() {
 }
 
 
-// --- Agora as dispesa rs ---
+// --- Agora as dispesa ---
 
 function getDespesas() {
     let desp = localStorage.getItem('despesas');
@@ -62,7 +60,7 @@ function prepararFormDespesa() {
     let categorias = getCategorias();
     let area = document.getElementById('area-form');
     
-    // anotaçao minha: bonus do aviso sem categoria, se n tiver ele esconde o form e da o aviso igual no pdf
+
     if (categorias.length === 0) {
         area.innerHTML = `<h1>Nova Despesa</h1>
                           <p style="color: red;">Cadastre uma categoria primeiro.</p>
@@ -83,7 +81,7 @@ function salvarDespesa(e) {
     e.preventDefault();
     
     let despesas = getDespesas();
-    // pegando a forma d pgmt q ta marcadinha (radio botton)
+
     let formaPgmt = document.querySelector('input[name="formaPagamento"]:checked').value;
     
     let nova = {
@@ -113,11 +111,11 @@ function listarDespesas() {
     let somaTotal = 0;
     
     despesas.forEach(d => {
-        // aq nois puxa o nome da categoria usando o ID igual relacionamento q o prof falou \${d.getCategoria().getNome()}
+        // aq nois puxa o nome da categoria usando o ID igual relacionamento \${d.getCategoria().getNome()}
         let cat = categorias.find(c => c.id == d.categoriaId);
         let catNome = cat ? cat.nome : "Sem Categoria";
         
-        let dataFormat = d.data.split('-').reverse().join('/'); // formata dd/mm/aaaa facil kkk
+        let dataFormat = d.data.split('-').reverse().join('/'); // formata dd/mm/aaaa 
         let valFloat = parseFloat(d.valor);
         somaTotal += valFloat;
         
@@ -136,7 +134,7 @@ function listarDespesas() {
 }
 
 function excluirDespesa(id) {
-    // anotaçao minha: funcao extra p apagar dispesa pq se errar n tinha como arrumar antes kk
+    
     let confirmou = confirm("Certeza q qr excluir?");
     if(confirmou){
         let despesas = getDespesas();
